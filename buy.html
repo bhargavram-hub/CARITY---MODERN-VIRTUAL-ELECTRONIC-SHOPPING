@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout | CARTIFY</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .box {
+            background: white;
+            padding: 30px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 12px;
+        }
+
+        img {
+            width: 200px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: green;
+            color: white;
+            border: none;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Order Summary</h2>
+    <div id="productDetails"></div>
+    <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<script>
+let product = JSON.parse(localStorage.getItem("buyNowProduct"));
+
+if (product) {
+    document.getElementById("productDetails").innerHTML = `
+        <img src="${product.image}">
+        <h3>${product.model}</h3>
+        <p>Brand: ${product.brand}</p>
+        <p>Price: ₹${product.price}</p>
+    `;
+}
+
+function placeOrder() {
+    alert("Order placed successfully! (Demo Mode)");
+    localStorage.removeItem("buyNowProduct");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

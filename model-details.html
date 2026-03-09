@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Model Details | CARTIFY</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f6f8;
+}
+
+header{
+background:#1f3b57;
+color:white;
+padding:15px 30px;
+display:flex;
+justify-content:space-between;
+}
+
+.details{
+display:flex;
+gap:30px;
+padding:40px;
+background:white;
+margin:30px;
+border-radius:10px;
+}
+
+.details img{
+width:250px;
+}
+
+.buttons button{
+padding:12px 20px;
+margin-right:10px;
+border:none;
+cursor:pointer;
+border-radius:6px;
+font-size:16px;
+}
+
+.buy{
+background:green;
+color:white;
+}
+
+.cart{
+background:orange;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>CARTIFY</h1>
+<a href="index.html" style="color:white">Home</a>
+</header>
+
+
+<div class="details">
+
+<img id="productImage">
+
+<div class="info">
+
+<h2 id="model"></h2>
+<p><b>Brand:</b> <span id="brand"></span></p>
+<p><b>Price:</b> ₹<span id="price"></span></p>
+
+<div class="buttons">
+<button class="buy" onclick="buyNow()">Buy Now</button>
+<button class="cart" onclick="addToCart()">Add to Cart</button>
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const brand = params.get("brand");
+const model = params.get("model");
+const price = params.get("price");
+const image = params.get("image");
+
+document.getElementById("brand").innerText = brand;
+document.getElementById("model").innerText = model;
+document.getElementById("price").innerText = price;
+document.getElementById("productImage").src = image;
+
+const product = {
+brand: brand,
+model: model,
+price: Number(price),
+image: image
+};
+
+function addToCart(){
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push(product);
+
+localStorage.setItem("cart", JSON.stringify(cart));
+
+alert("Product added to cart");
+
+}
+
+function buyNow(){
+
+localStorage.setItem("buyNowProduct", JSON.stringify(product));
+
+window.location.href="buy.html";
+
+}
+
+</script>
+
+</body>
+</html>

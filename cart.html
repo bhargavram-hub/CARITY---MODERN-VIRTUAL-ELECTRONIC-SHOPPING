@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Cart | CARTIFY</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .cart-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .cart-item img {
+            width: 120px;
+            margin-right: 20px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .details h3 {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: green;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .checkout {
+            background: green;
+            color: white;
+        }
+
+        .clear {
+            background: red;
+            color: white;
+        }
+
+        .empty {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>🛒 Your Cart</h2>
+
+<div class="cart-container" id="cartItems"></div>
+
+<div class="total" id="totalPrice"></div>
+
+<div class="actions" id="cartActions">
+    <button class="checkout" onclick="checkout()">Proceed to Checkout</button>
+    <button class="clear" onclick="clearCart()">Clear Cart</button>
+</div>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let container = document.getElementById("cartItems");
+let totalBox = document.getElementById("totalPrice");
+let actions = document.getElementById("cartActions");
+
+let total = 0;
+
+if (cart.length === 0) {
+    container.innerHTML = "<p class='empty'>Your cart is empty</p>";
+    actions.style.display = "none";
+} else {
+    cart.forEach(item => {
+        total += item.price;
+
+        container.innerHTML += `
+            <div class="cart-item">
+                <img src="images/${item.brand.toLowerCase()}.jpg" alt="${item.model}">
+                <div class="details">
+                    <h3>${item.model}</h3>
+                    <p>Brand: ${item.brand}</p>
+                    <p class="price">₹${item.price}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    totalBox.innerHTML = `Total Amount: ₹${total}`;
+}
+
+function clearCart() {
+    localStorage.removeItem("cart");
+    alert("Cart cleared successfully");
+    location.reload();
+}
+
+function checkout() {
+    alert("Checkout successful! (Demo only)");
+    localStorage.removeItem("cart");
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

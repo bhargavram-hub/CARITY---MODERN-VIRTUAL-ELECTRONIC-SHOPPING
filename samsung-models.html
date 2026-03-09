@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Samsung Mobiles</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f5f5f5;
+margin:0;
+padding:0;
+}
+
+h1{
+text-align:center;
+margin-top:20px;
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+padding:40px;
+}
+
+.product{
+background:white;
+padding:20px;
+border-radius:10px;
+text-align:center;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+cursor:pointer;
+transition:0.3s;
+}
+
+.product:hover{
+transform:scale(1.05);
+}
+
+.product img{
+width:180px;
+height:200px;
+object-fit:contain;
+}
+
+.product h3{
+margin:10px 0;
+}
+
+.product p{
+color:green;
+font-weight:bold;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Samsung Smartphones</h1>
+
+<div class="products">
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy S23 Ultra&price=124999&image=images/s23ultra.jpg'">
+
+<img src="images/s23.jpg">
+<h3>Galaxy S23 Ultra</h3>
+<p>₹1,24,999</p>
+
+</div>
+
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy S22&price=59999&image=images/s22.jpg'">
+
+<img src="images/s22.jpg">
+<h3>Galaxy S22</h3>
+<p>₹59,999</p>
+
+</div>
+
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy S21 FE&price=49999&image=images/s21fe.jpg'">
+
+<img src="images/s21.jpg">
+<h3>Galaxy S21 FE</h3>
+<p>₹49,999</p>
+
+</div>
+
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy A54&price=38999&image=images/a54.jpg'">
+
+<img src="images/a54.jpg">
+<h3>Galaxy A54</h3>
+<p>₹38,999</p>
+
+</div>
+
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy A34&price=30999&image=images/a34.jpg'">
+
+<img src="images/a34.jpg">
+<h3>Galaxy A34</h3>
+<p>₹30,999</p>
+
+</div>
+
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Samsung&model=Galaxy M34&price=18999&image=images/m34.jpg'">
+
+<img src="images/m34.jpg">
+<h3>Galaxy M34</h3>
+<p>₹18,999</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

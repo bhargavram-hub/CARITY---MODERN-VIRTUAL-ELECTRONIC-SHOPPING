@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CARTIFY | Smart Electronics Hub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ---------- BASIC RESET ---------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+/* ---------- HEADER ---------- */
+.header {
+    background: #1f3b57;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 45px;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(120deg, #1f3b57, #4fa3d1);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h2 {
+    margin-bottom: 10px;
+}
+
+/* ---------- HIGHLIGHTS ---------- */
+.highlight {
+    display: flex;
+    justify-content: space-around;
+    background: white;
+    padding: 20px;
+    font-weight: bold;
+}
+
+/* ---------- SECTION TITLE ---------- */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+/* ---------- PRODUCTS GRID ---------- */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 0 40px 60px;
+}
+
+/* ---------- CARD ---------- */
+.card {
+    background: white;
+    padding: 35px;       /* more space inside */
+    min-height: 260px;   /* makes cards taller */
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.35s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+.card img {
+    width: 110px;        /* bigger icons */
+    height: auto;
+    margin-bottom: 20px;
+    transition: transform 0.35s ease;
+}
+
+.card h3 {
+    color: #2c3e50;
+}
+
+/* ---------- HOVER EFFECT ---------- */
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+}
+
+.card:hover img {
+    transform: scale(1.2);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: #1f3b57;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="logo-area">
+        <img src="images/Cartify.jpg" class="logo">
+        <h1>CARTIFY</h1>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h2>Smart Tech, Smarter Shopping</h2>
+    <p>Your one-stop digital electronics showroom</p>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlight">
+    <div>✔ Verified Products</div>
+    <div>✔ Student Friendly Prices</div>
+    <div>✔ Easy Checkout</div>
+</section>
+
+<!-- PRODUCTS -->
+<h2 class="section-title">Available Devices</h2>
+
+<div class="products">
+
+    <div class="card" onclick="window.location.href='smartphones.html'">
+        <img src="images/samsung.jpg">
+        <h3>Smartphones</h3>
+    </div>
+
+    <div class="card">
+        <img src="images/hp.jpg">
+        <h3>Laptops</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/lg.jpg">
+        <h3>Smart TVs</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/printer.jpg">
+        <h3>Printers</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/speaker.jpg">
+        <h3>Speakers</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/earpods.jpg">
+        <h3>Bluetooth Earpods</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/pc.jpg">
+        <h3>PCs</h3>
+        <h4 style="color: red;"> No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/keyboard.jpg">
+        <h3>Keyboard</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/mouse.jpg">
+        <h3>Mouse</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+
+    <div class="card">
+        <img src="images/monitor.jpg">
+        <h3>Monitors</h3>
+        <h4 style="color: red;">No Products Available</h4>
+    </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>CARTIFY – Smart Electronics Hub</strong></p>
+    <p>📍 Hyderabad, India</p>
+    <p>📞 Contact: +91 9848324599</p>
+    <p>📧 Email: cartify.support@gmail.com</p>
+    <p>© 2026 CARTIFY </p>
+</footer>
+
+</body>
+</html>
+

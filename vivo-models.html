@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vivo Mobiles</title>
+
+<style>
+body{font-family:Arial;background:#f5f5f5;margin:0;}
+h1{text-align:center;margin-top:20px;}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:40px;}
+.product{background:white;padding:20px;border-radius:10px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);cursor:pointer;}
+.product img{width:180px;height:200px;object-fit:contain;}
+.product p{color:green;font-weight:bold;}
+</style>
+
+</head>
+
+<body>
+
+<h1>Vivo Smartphones</h1>
+
+<div class="products">
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Vivo&model=Vivo V24&price=33999&image=images/vivov24.jpg'">
+
+<img src="images/v24.jpg">
+<h3>Vivo V24</h3>
+<p>₹33,999</p>
+
+</div>
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Vivo&model=Vivo Y200&price=21999&image=images/vivoy200.jpg'">
+
+<img src="images/y200.jpg">
+<h3>Vivo Y200</h3>
+<p>₹21,999</p>
+
+</div>
+
+</div>
+
+</body>
+</html>

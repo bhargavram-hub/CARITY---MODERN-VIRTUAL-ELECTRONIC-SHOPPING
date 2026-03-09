@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Models | CARTIFY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:Arial;background:#f4f6f8}
+header{background:#1f3b57;color:#fff;padding:15px;display:flex;justify-content:space-between}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:30px}
+.card{background:#fff;padding:20px;border-radius:14px;text-align:center;cursor:pointer}
+.price{color:green;font-weight:bold}
+</style>
+</head>
+<body>
+
+<header>
+<h2 id="title"></h2>
+<a href="smartphones.html" style="color:white">⬅ Back</a>
+</header>
+
+<div class="grid" id="models"></div>
+
+<script>
+const phones = {
+  Samsung: [
+    { name: "Galaxy S23", price: "₹74,999" },
+    { name: "Galaxy S23 Ultra", price: "₹1,24,999" },
+    { name: "Galaxy A54", price: "₹34,999" }
+  ],
+  Apple: [
+    { name: "iPhone 15", price: "₹79,999" },
+    { name: "iPhone 15 Pro", price: "₹1,34,999" },
+    { name: "iPhone 14", price: "₹59,999" }
+  ],
+  OnePlus: [
+    { name: "OnePlus 12", price: "₹64,999" },
+    { name: "OnePlus 11R", price: "₹39,999" }
+  ],
+  Realme: [
+    { name: "Realme GT Neo 3", price: "₹29,999" },
+    { name: "Narzo 60", price: "₹19,999" }
+  ],
+  Redmi: [
+    { name: "Note 13 Pro", price: "₹25,999" },
+    { name: "Redmi 12", price: "₹11,999" }
+  ],
+  Vivo: [
+    { name: "Vivo X100", price: "₹63,999" },
+    { name: "Vivo Y200", price: "₹21,999" }
+  ],
+  Motorola: [
+    { name: "Edge 40", price: "₹29,999" },
+    { name: "G54", price: "₹15,999" }
+  ],
+  Nokia: [
+    { name: "G42", price: "₹12,999" },
+    { name: "C32", price: "₹9,999" }
+  ],
+  Google: [
+    { name: "Pixel 8", price: "₹75,999" },
+    { name: "Pixel 7a", price: "₹43,999" }
+  ]
+};
+
+const params = new URLSearchParams(location.search);
+const brand = params.get("brand");
+
+document.getElementById("title").innerText = brand + " Models";
+
+const list = document.getElementById("models");
+
+if (!phones[brand]) {
+  list.innerHTML = "<h3>No models available</h3>";
+} else {
+  phones[brand].forEach(p => {
+    list.innerHTML += `
+      <div class="card" onclick="openModel('${brand}','${p.name}','${p.price}')">
+        <h3>${p.name}</h3>
+        <p class="price">${p.price}</p>
+      </div>`;
+  });
+}
+
+function openModel(b, m, p) {
+  location.href = `model-details.html?brand=${b}&model=${m}&price=${p}`;
+}
+</script>
+
+
+</body>
+</html>

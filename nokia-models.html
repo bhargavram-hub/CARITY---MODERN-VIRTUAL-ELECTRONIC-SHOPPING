@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nokia Mobiles</title>
+
+<style>
+body{font-family:Arial;background:#f5f5f5;margin:0;}
+h1{text-align:center;margin-top:20px;}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding:40px;}
+.product{background:white;padding:20px;border-radius:10px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.1);cursor:pointer;}
+.product img{width:180px;height:200px;object-fit:contain;}
+.product p{color:green;font-weight:bold;}
+</style>
+
+</head>
+
+<body>
+
+<h1>Nokia Smartphones</h1>
+
+<div class="products">
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Nokia&model=Nokia G42&price=12999&image=images/nokia.jpg'">
+
+<img src="images/nokia.jpg">
+<h3>Nokia G42</h3>
+<p>₹12,999</p>
+
+</div>
+
+<div class="product"
+onclick="location.href='model-details.html?brand=Nokia&model=Nokia X30&price=36999&image=images/x30.jpg'">
+
+<img src="images/x30.jpg">
+<h3>Nokia X30</h3>
+<p>₹36,999</p>
+
+</div>
+
+</div>
+
+</body>
+</html>
